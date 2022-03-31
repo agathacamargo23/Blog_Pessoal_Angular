@@ -41,7 +41,7 @@ cadastrarUsuario(){
   else{//sobrescreve a senha em formato json para que o backend receber
     this.authService.Cadastrar(this.usuario).subscribe((resp: Usuario) => { 
       this.usuario = resp
-      this.router.navigate(['/logar'])
+      this.router.navigate(['/entrar'])
       alert("Você foi cadastrado com sucesso!")
     }) ; 
    
