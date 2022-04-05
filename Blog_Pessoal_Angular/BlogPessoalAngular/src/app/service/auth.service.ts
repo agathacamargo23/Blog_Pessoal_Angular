@@ -30,8 +30,8 @@ return this.html.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuar
 
     if(environment.token != ''){
       ok = true
+    
     }
-
     return ok
   }
 
