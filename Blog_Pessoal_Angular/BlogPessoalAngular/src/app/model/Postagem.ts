@@ -3,7 +3,7 @@ import { Usuario } from "./Usuario";
 
 
 export class Postagem{
-    public id: number;;
+    public id: number;
 
     public titulo: string;
 
