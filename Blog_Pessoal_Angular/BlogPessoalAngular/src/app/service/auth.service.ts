@@ -25,6 +25,11 @@ Cadastrar(usuario: Usuario): Observable<Usuario> {// da referencia a model do us
 return this.html.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario)  
   }// sinaliza a model usuario model e o usuario controller 
 
+getByIdUsuario(id: number): Observable<Usuario>{
+  return this.html.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+} 
+
+
   logado(){
     let ok : boolean = false
 
