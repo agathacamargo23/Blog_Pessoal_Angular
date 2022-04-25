@@ -18,15 +18,19 @@ certificar os endpoints
 */
 
 entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-return this.html.post<UsuarioLogin>('http://localhost:8080/usuarios/logar', usuarioLogin)
+return this.html.post<UsuarioLogin>('https://blogpessoalagatha.herokuapp.com/usuarios/logar', usuarioLogin)
 }
 Cadastrar(usuario: Usuario): Observable<Usuario> {// da referencia a model do usuario
 
-return this.html.post<Usuario>('http://localhost:8080/usuarios/cadastrar', usuario)  
+return this.html.post<Usuario>('https://blogpessoalagatha.herokuapp.com/usuarios/cadastrar', usuario)  
   }// sinaliza a model usuario model e o usuario controller 
 
+atualizar(usuario: Usuario): Observable<Usuario> {// da referencia a model do usuario
+
+    return this.html.put<Usuario>('https://blogpessoalagatha.herokuapp.com/usuarios/update', usuario)  
+  }
 getByIdUsuario(id: number): Observable<Usuario>{
-  return this.html.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+  return this.html.get<Usuario>(`https://blogpessoalagatha.herokuapp.com/usuarios/${id}`)
 } 
 
 

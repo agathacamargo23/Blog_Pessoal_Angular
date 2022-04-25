@@ -15,7 +15,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class InicioComponent implements OnInit {
 
-  listapostagens: Postagem[]
+  listaPostagens: Postagem[]
   tema: Tema =  new Tema
   postagem: Postagem = new Postagem
   listaTemas: Tema[]
@@ -33,8 +33,10 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(){
   
-    if(environment.token == ' '){
+    if(environment.token == ''){
+      alert('Sua seção expirou faça o login novamente')
       this.router.navigate(['/entrar'])
+
     }
     this.getAllTemas()
     this.getAllPostagens()
@@ -54,7 +56,7 @@ export class InicioComponent implements OnInit {
   }
   getAllPostagens(){
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-this.listapostagens = resp
+this.listaPostagens = resp
     })
   }
 
